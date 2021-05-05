@@ -46,13 +46,15 @@ get_filename() {
   local version="$1"
   local platform="$2"
 
-  echo "operator-sdk-v${version}-${platform}"
+  platform = 'linux_amd64'
+  echo "operator-sdk_${platform}"
 }
 
 get_download_url() {
   local version="$1"
   local platform="$2"
   local filename="$(get_filename $version $platform)"
+  filename='operator-sdk_linux_amd64'
   echo "https://github.com/operator-framework/operator-sdk/releases/download/v${version}/${filename}"
 }
 
